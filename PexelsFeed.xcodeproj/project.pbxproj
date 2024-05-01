@@ -11,6 +11,20 @@
 		A559E65E2BE2348B0062B2D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E65D2BE2348B0062B2D4 /* ContentView.swift */; };
 		A559E6602BE2348E0062B2D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A559E65F2BE2348E0062B2D4 /* Assets.xcassets */; };
 		A559E6642BE2348E0062B2D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A559E6632BE2348E0062B2D4 /* Preview Assets.xcassets */; };
+		A559E6902BE234EB0062B2D4 /* BackendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E66A2BE234EB0062B2D4 /* BackendController.swift */; };
+		A559E6912BE234EB0062B2D4 /* BackendControllerBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E66B2BE234EB0062B2D4 /* BackendControllerBuilderProtocol.swift */; };
+		A559E6932BE234EB0062B2D4 /* DefaultBackendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E66D2BE234EB0062B2D4 /* DefaultBackendController.swift */; };
+		A559E69B2BE234EB0062B2D4 /* DefaultBackendController+Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6752BE234EB0062B2D4 /* DefaultBackendController+Feed.swift */; };
+		A559E69C2BE234EB0062B2D4 /* DefaultBackendControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6762BE234EB0062B2D4 /* DefaultBackendControllerBuilder.swift */; };
+		A559E69E2BE234EB0062B2D4 /* Error+description.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6792BE234EB0062B2D4 /* Error+description.swift */; };
+		A559E6AD2BE234EB0062B2D4 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E68A2BE234EB0062B2D4 /* NetworkProtocol.swift */; };
+		A559E6AE2BE234EB0062B2D4 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E68B2BE234EB0062B2D4 /* NetworkWorker.swift */; };
+		A559E6AF2BE234EB0062B2D4 /* NetworkWorker+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E68C2BE234EB0062B2D4 /* NetworkWorker+Error.swift */; };
+		A559E6B02BE234EB0062B2D4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E68E2BE234EB0062B2D4 /* APIConstants.swift */; };
+		A559E6B52BE238180062B2D4 /* CredentialStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6B22BE238170062B2D4 /* CredentialStorage.swift */; };
+		A559E6B62BE238180062B2D4 /* DefaultCredentialStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6B32BE238170062B2D4 /* DefaultCredentialStorage.swift */; };
+		A559E6B82BE239A90062B2D4 /* FeedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6B72BE239A90062B2D4 /* FeedPage.swift */; };
+		A559E6BA2BE2418D0062B2D4 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +34,20 @@
 		A559E65F2BE2348E0062B2D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A559E6612BE2348E0062B2D4 /* PexelsFeed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PexelsFeed.entitlements; sourceTree = "<group>"; };
 		A559E6632BE2348E0062B2D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A559E66A2BE234EB0062B2D4 /* BackendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendController.swift; sourceTree = "<group>"; };
+		A559E66B2BE234EB0062B2D4 /* BackendControllerBuilderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendControllerBuilderProtocol.swift; sourceTree = "<group>"; };
+		A559E66D2BE234EB0062B2D4 /* DefaultBackendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultBackendController.swift; sourceTree = "<group>"; };
+		A559E6752BE234EB0062B2D4 /* DefaultBackendController+Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultBackendController+Feed.swift"; sourceTree = "<group>"; };
+		A559E6762BE234EB0062B2D4 /* DefaultBackendControllerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultBackendControllerBuilder.swift; sourceTree = "<group>"; };
+		A559E6792BE234EB0062B2D4 /* Error+description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+description.swift"; sourceTree = "<group>"; };
+		A559E68A2BE234EB0062B2D4 /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		A559E68B2BE234EB0062B2D4 /* NetworkWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
+		A559E68C2BE234EB0062B2D4 /* NetworkWorker+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkWorker+Error.swift"; sourceTree = "<group>"; };
+		A559E68E2BE234EB0062B2D4 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		A559E6B22BE238170062B2D4 /* CredentialStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialStorage.swift; sourceTree = "<group>"; };
+		A559E6B32BE238170062B2D4 /* DefaultCredentialStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCredentialStorage.swift; sourceTree = "<group>"; };
+		A559E6B72BE239A90062B2D4 /* FeedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPage.swift; sourceTree = "<group>"; };
+		A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +80,8 @@
 		A559E65A2BE2348B0062B2D4 /* PexelsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				A559E65B2BE2348B0062B2D4 /* PexelsFeedApp.swift */,
-				A559E65D2BE2348B0062B2D4 /* ContentView.swift */,
+				A559E68F2BE234EB0062B2D4 /* Services */,
+				A559E6B12BE2350A0062B2D4 /* UI */,
 				A559E65F2BE2348E0062B2D4 /* Assets.xcassets */,
 				A559E6612BE2348E0062B2D4 /* PexelsFeed.entitlements */,
 				A559E6622BE2348E0062B2D4 /* Preview Content */,
@@ -67,6 +95,76 @@
 				A559E6632BE2348E0062B2D4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A559E6782BE234EB0062B2D4 /* BackendController */ = {
+			isa = PBXGroup;
+			children = (
+				A559E66A2BE234EB0062B2D4 /* BackendController.swift */,
+				A559E66B2BE234EB0062B2D4 /* BackendControllerBuilderProtocol.swift */,
+				A559E66D2BE234EB0062B2D4 /* DefaultBackendController.swift */,
+				A559E6752BE234EB0062B2D4 /* DefaultBackendController+Feed.swift */,
+				A559E6762BE234EB0062B2D4 /* DefaultBackendControllerBuilder.swift */,
+			);
+			path = BackendController;
+			sourceTree = "<group>";
+		};
+		A559E67A2BE234EB0062B2D4 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				A559E6792BE234EB0062B2D4 /* Error+description.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		A559E6892BE234EB0062B2D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A559E67A2BE234EB0062B2D4 /* Errors */,
+				A559E6B72BE239A90062B2D4 /* FeedPage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A559E68D2BE234EB0062B2D4 /* NetworkWorker */ = {
+			isa = PBXGroup;
+			children = (
+				A559E68A2BE234EB0062B2D4 /* NetworkProtocol.swift */,
+				A559E68B2BE234EB0062B2D4 /* NetworkWorker.swift */,
+				A559E68C2BE234EB0062B2D4 /* NetworkWorker+Error.swift */,
+			);
+			path = NetworkWorker;
+			sourceTree = "<group>";
+		};
+		A559E68F2BE234EB0062B2D4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A559E6B42BE238170062B2D4 /* CredentialStorage */,
+				A559E6782BE234EB0062B2D4 /* BackendController */,
+				A559E6892BE234EB0062B2D4 /* Models */,
+				A559E68D2BE234EB0062B2D4 /* NetworkWorker */,
+				A559E68E2BE234EB0062B2D4 /* APIConstants.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A559E6B12BE2350A0062B2D4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A559E65B2BE2348B0062B2D4 /* PexelsFeedApp.swift */,
+				A559E65D2BE2348B0062B2D4 /* ContentView.swift */,
+				A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A559E6B42BE238170062B2D4 /* CredentialStorage */ = {
+			isa = PBXGroup;
+			children = (
+				A559E6B22BE238170062B2D4 /* CredentialStorage.swift */,
+				A559E6B32BE238170062B2D4 /* DefaultCredentialStorage.swift */,
+			);
+			path = CredentialStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +237,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A559E6B02BE234EB0062B2D4 /* APIConstants.swift in Sources */,
+				A559E69C2BE234EB0062B2D4 /* DefaultBackendControllerBuilder.swift in Sources */,
+				A559E6B82BE239A90062B2D4 /* FeedPage.swift in Sources */,
 				A559E65E2BE2348B0062B2D4 /* ContentView.swift in Sources */,
+				A559E6AF2BE234EB0062B2D4 /* NetworkWorker+Error.swift in Sources */,
 				A559E65C2BE2348B0062B2D4 /* PexelsFeedApp.swift in Sources */,
+				A559E6912BE234EB0062B2D4 /* BackendControllerBuilderProtocol.swift in Sources */,
+				A559E6AD2BE234EB0062B2D4 /* NetworkProtocol.swift in Sources */,
+				A559E6BA2BE2418D0062B2D4 /* ContentViewModel.swift in Sources */,
+				A559E69E2BE234EB0062B2D4 /* Error+description.swift in Sources */,
+				A559E6AE2BE234EB0062B2D4 /* NetworkWorker.swift in Sources */,
+				A559E69B2BE234EB0062B2D4 /* DefaultBackendController+Feed.swift in Sources */,
+				A559E6932BE234EB0062B2D4 /* DefaultBackendController.swift in Sources */,
+				A559E6B62BE238180062B2D4 /* DefaultCredentialStorage.swift in Sources */,
+				A559E6902BE234EB0062B2D4 /* BackendController.swift in Sources */,
+				A559E6B52BE238180062B2D4 /* CredentialStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

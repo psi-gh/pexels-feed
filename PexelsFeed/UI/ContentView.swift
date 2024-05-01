@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    let viewModel: ContentViewModel
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
+                .onTapGesture {
+                    viewModel.tap()
+                }
             Text("Hello, world!")
         }
         .padding()
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
