@@ -11,16 +11,45 @@ struct ContentView: View {
     let viewModel: ContentViewModel
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-                .onTapGesture {
-                    viewModel.tap()
+        NavigationView {
+            Group {
+                if viewModel.isLoading {
+                    loader
+                } else {
+                    grid
                 }
-            Text("Hello, world!")
+            }
+            .navigationTitle("Pexels Feed")
+            .onAppear {
+                viewModel.loadPhotos()
+            }
         }
-        .padding()
+    }
+    
+    @ViewBuilder
+    var grid: some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                ForEach(viewModel.photos, id: \.id) { photo in
+                    VStack {
+                        AsyncImage(url: URL(string: photo.source.medium))
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 200)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .shadow(radius: 5)
+                        Text(photo.photographer)
+                            .font(.caption)
+                    }
+                    .padding(.horizontal)
+                }
+            }
+        }
+
+    }
+    
+    @ViewBuilder
+    var loader: some View {
+        ProgressView()
     }
 }
 

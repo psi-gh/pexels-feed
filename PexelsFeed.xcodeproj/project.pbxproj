@@ -80,7 +80,8 @@
 		A559E65A2BE2348B0062B2D4 /* PexelsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				A559E68F2BE234EB0062B2D4 /* Services */,
+				A559E6892BE234EB0062B2D4 /* Models */,
+				A559E68F2BE234EB0062B2D4 /* API */,
 				A559E6B12BE2350A0062B2D4 /* UI */,
 				A559E65F2BE2348E0062B2D4 /* Assets.xcassets */,
 				A559E6612BE2348E0062B2D4 /* PexelsFeed.entitlements */,
@@ -136,16 +137,15 @@
 			path = NetworkWorker;
 			sourceTree = "<group>";
 		};
-		A559E68F2BE234EB0062B2D4 /* Services */ = {
+		A559E68F2BE234EB0062B2D4 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				A559E6B42BE238170062B2D4 /* CredentialStorage */,
 				A559E6782BE234EB0062B2D4 /* BackendController */,
-				A559E6892BE234EB0062B2D4 /* Models */,
 				A559E68D2BE234EB0062B2D4 /* NetworkWorker */,
 				A559E68E2BE234EB0062B2D4 /* APIConstants.swift */,
 			);
-			path = Services;
+			path = API;
 			sourceTree = "<group>";
 		};
 		A559E6B12BE2350A0062B2D4 /* UI */ = {
