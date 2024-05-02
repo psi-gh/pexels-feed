@@ -30,30 +30,30 @@ struct ContentView: View {
             GridItem(.adaptive(minimum: 120, maximum: 190), spacing: 20),
         ]
         
-//        GeometryReader { geomety in
-            ScrollView(.vertical) {
-                LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(viewModel.photos, id: \.id) { photo in
-                        VStack {
-                            Image("pexels-photo3")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-//                                .frame(width: (geometry.size.width - 10 - 8 - 8)/2, height: 150)
-                                .frame(maxHeight: 150)
-                                .clipped()
-                                .opacity(0.5)
-                                .border(Color.green, width: 2)
-                            
-                            Text(photo.photographer)
-                                .font(.caption)
-                        }
+        ScrollView(.vertical) {
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(viewModel.photos, id: \.id) { photo in
+                    VStack {
+                        Color.clear.overlay(
+                            AsyncImage(url: URL(string: photo.source.large)) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            } placeholder: {
+                                ProgressView()
+                            }
+                        )
+                        .aspectRatio(9/16, contentMode: .fill)
+                        .clipped()
+                        
+                        Text(photo.photographer)
+                            .font(.caption)
                     }
                 }
             }
-            .padding(8)
-//        }
+        }
+        .padding(8)
     }
-    
     
     @ViewBuilder
     var grid2: some View {
