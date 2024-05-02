@@ -26,50 +26,85 @@ struct ContentView: View {
 
     @ViewBuilder
     var grid: some View {
-//
-//        let columns = [
-//            GridItem(.flexible(minimum: 50, maximum: 190), spacing: 20),
-//            GridItem(.flexible(minimum: 50, maximum: 190), spacing: 20)
-//        ]
-//        
-//        ScrollView(.vertical) {
-//            LazyVGrid(columns: columns, spacing: 10) {
-//                ForEach(viewModel.photos, id: \.id) { photo in
-//                    cell(photo)
-//                        .frame(minHeight: 100)
-//                }
-//            }
-//        }
-//        .padding()
-//        let source = $viewModel.$photos.first?.source.medium
-
-//        ScrollView(.vertical) {
-            List {
+        let columns = [
+            GridItem(.flexible(minimum: 50, maximum: 190), spacing: 20),
+            GridItem(.flexible(minimum: 50, maximum: 190), spacing: 20)
+        ]
+        
+        ScrollView(.vertical) {
+            LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(viewModel.photos, id: \.id) { photo in
                     let source = photo.source.medium
-//                    AsyncImage(url: URL(string: source)) { image in
-//                        image
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fill)
-//                    } placeholder: {
-//                        ProgressView()
+                    cell2(photo)
+                        .frame(minHeight: 100)
+//                    VStack {
+//                        AsyncImage(url: URL(string: source)) { image in
+//                            image
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fill)
+//                        } placeholder: {
+//                            ProgressView()
+//                        }
+//                        .frame(width: 100, height: 100)
+//                        .clipped()
+//                        .border(Color.green, width: 2)
+//                        
+//                        Text(photo.photographer)
+//                            .font(.caption)
 //                    }
-//                    .frame(height: 200) // Set a fixed height for each image
-//                    .border(Color.red, width: 1)
-                    //                    Image(uiImage: UIImage(data: try! Data(contentsOf: URL(string: source)!))!)
-                    AsyncImage(url: URL(string: source)) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(width: 100, height: 100)
-                    .clipped()
-                    .border(Color.green, width: 2)
                 }
             }
-//        }
+        }
+        .padding()
+        //                    AsyncImage(url: URL(string: source)) { image in
+        //                        image
+        //                            .resizable()
+        //                            .aspectRatio(contentMode: .fill)
+        //                    } placeholder: {
+        //                        ProgressView()
+        //                    }
+        //                    .frame(height: 200) // Set a fixed height for each image
+        //                    .border(Color.red, width: 1)
+        //                    Image(uiImage: UIImage(data: try! Data(contentsOf: URL(string: source)!))!)
+
+    }
+    
+    @ViewBuilder
+    var list: some View {
+        List {
+            ForEach(viewModel.photos, id: \.id) { photo in
+                let source = photo.source.medium
+                AsyncImage(url: URL(string: source)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 100, height: 100)
+                .clipped()
+                .border(Color.green, width: 2)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func cell2(_ photo: Photo) -> some View {
+        VStack {
+            AsyncImage(url: URL(string: photo.source.medium)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: 100, height: 100)
+            .clipped()
+            .border(Color.green, width: 2)
+            
+            Text(photo.photographer)
+                .font(.caption)
+        }
     }
     
     @ViewBuilder

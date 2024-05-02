@@ -19,7 +19,7 @@ class ContentViewModel: ObservableObject {
 
     func loadPhotos() {
         isLoading = true
-        backendController.getFeed(page: 1, perPage: 1)
+        backendController.getFeed(page: 2, perPage: 100)
             .sink { [weak self] completion in
                 self?.isLoading = false
                 switch completion {
