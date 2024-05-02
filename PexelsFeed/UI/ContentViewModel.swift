@@ -5,12 +5,12 @@
 import Combine
 import Foundation
 
-@Observable
-class ContentViewModel {
+//@Observable
+class ContentViewModel: ObservableObject {
     private(set) var backendController: BackendController
     private var subscriptions = Set<AnyCancellable>()
 
-    var photos: [Photo] = []
+    @Published var photos: [Photo] = []
     var isLoading = false
 
     init(backendController: BackendController) {
@@ -19,7 +19,7 @@ class ContentViewModel {
 
     func loadPhotos() {
         isLoading = true
-        backendController.getFeed(page: 1, perPage: 10)
+        backendController.getFeed(page: 1, perPage: 1)
             .sink { [weak self] completion in
                 self?.isLoading = false
                 switch completion {
@@ -29,8 +29,8 @@ class ContentViewModel {
                     print("🚘 error: \(error)")
                 }
             } receiveValue: { [weak self] item in
-                self?.isLoading = false
                 self?.photos = item.photos
+                self?.isLoading = false
                 print(item)
             }.store(in: &subscriptions)
     }
