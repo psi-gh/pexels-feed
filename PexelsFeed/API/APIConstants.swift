@@ -1,19 +1,23 @@
+// APIConstants.swift
+// Copyright (c) 2024 Pavel Ivanov
+// Created by Pavel Ivanov on 11.08.2021.
+
 import Foundation
 
 public enum HTTPError: LocalizedError, Error, Identifiable {
     public var id: String { localizedDescription }
     case urlError(URLError)
-    case responseError((Int,String))
+    case responseError((Int, String))
     case decodingError(DecodingError)
     case genericError
     case invalidRequest
     case encodeFailed
 }
 
-public struct APIConstants {
+public enum APIConstants {
     public static let codeTimeout = 40
     public static let baseURL = "https://api.pexels.com"
-    
+
     static let jsonDecoder: JSONDecoder = {
         let jsonDecoder = JSONDecoder()
         let dateFormatter = DateFormatter()
@@ -21,5 +25,4 @@ public struct APIConstants {
         jsonDecoder.dateDecodingStrategy = .formatted(dateFormatter)
         return jsonDecoder
     }()
-    
 }

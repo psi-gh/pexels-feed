@@ -1,3 +1,7 @@
+// CredentialStorage.swift
+// Copyright (c) 2024 Pavel Ivanov
+// Created by Pavel Ivanov on 11.08.2021.
+
 import Foundation
 
 protocol CredentialStorageOutput: AnyObject {
@@ -8,4 +12,4 @@ protocol CredentialStorageInput {
     func setValues(token: String?)
 }
 
-typealias CredentialStorage = CredentialStorageOutput & CredentialStorageInput
+typealias CredentialStorage = CredentialStorageInput & CredentialStorageOutput

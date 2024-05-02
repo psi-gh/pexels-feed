@@ -1,9 +1,6 @@
-//
-//  FeedPage.swift
-//  PexelsFeed
-//
-//  Created by Pavel Ivanov on 01.05.2024.
-//
+// FeedPage.swift
+// Copyright (c) 2024 Pavel Ivanov
+// Created by Pavel Ivanov on 01.05.2024.
 
 import Foundation
 

@@ -1,15 +1,12 @@
-//
-//  ContentView.swift
-//  PexelsFeed
-//
-//  Created by Pavel Ivanov on 01.05.2024.
-//
+// ContentView.swift
+// Copyright (c) 2024 Pavel Ivanov
+// Created by Pavel Ivanov on 01.05.2024.
 
 import SwiftUI
 
 struct ContentView: View {
     let viewModel: ContentViewModel
-    
+
     var body: some View {
         NavigationView {
             Group {
@@ -25,7 +22,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var grid: some View {
         ScrollView {
@@ -44,15 +41,14 @@ struct ContentView: View {
                 }
             }
         }
-
     }
-    
+
     @ViewBuilder
     var loader: some View {
         ProgressView()
     }
 }
 
-//#Preview {
+// #Preview {
 //    ContentView()
-//}
+// }
