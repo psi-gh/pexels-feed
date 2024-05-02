@@ -1,11 +1,11 @@
 // ContentViewModel.swift
 // Copyright (c) 2024 Pavel Ivanov
-// Created by Pavel Ivanov on 01.05.2024.
+// Created by Pavel Ivanov on 02.05.2024.
 
 import Combine
 import Foundation
 
-//@Observable
+// @Observable
 class ContentViewModel: ObservableObject {
     private(set) var backendController: BackendController
     private var subscriptions = Set<AnyCancellable>()
