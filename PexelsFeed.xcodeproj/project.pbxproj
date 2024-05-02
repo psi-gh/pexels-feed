@@ -25,6 +25,7 @@
 		A559E6B62BE238180062B2D4 /* DefaultCredentialStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6B32BE238170062B2D4 /* DefaultCredentialStorage.swift */; };
 		A559E6B82BE239A90062B2D4 /* FeedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6B72BE239A90062B2D4 /* FeedPage.swift */; };
 		A559E6BA2BE2418D0062B2D4 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */; };
+		A5F3EEEC2BE3ABEA0002D024 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A559E6B32BE238170062B2D4 /* DefaultCredentialStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCredentialStorage.swift; sourceTree = "<group>"; };
 		A559E6B72BE239A90062B2D4 /* FeedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPage.swift; sourceTree = "<group>"; };
 		A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				A559E65B2BE2348B0062B2D4 /* PexelsFeedApp.swift */,
 				A559E65D2BE2348B0062B2D4 /* ContentView.swift */,
 				A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */,
+				A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A559E6B02BE234EB0062B2D4 /* APIConstants.swift in Sources */,
+				A5F3EEEC2BE3ABEA0002D024 /* RemoteImage.swift in Sources */,
 				A559E69C2BE234EB0062B2D4 /* DefaultBackendControllerBuilder.swift in Sources */,
 				A559E6B82BE239A90062B2D4 /* FeedPage.swift in Sources */,
 				A559E65E2BE2348B0062B2D4 /* ContentView.swift in Sources */,

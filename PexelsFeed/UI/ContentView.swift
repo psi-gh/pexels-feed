@@ -23,39 +23,103 @@ struct ContentView: View {
             }
         }
     }
-
+    
     @ViewBuilder
     var grid: some View {
         let columns = [
-            GridItem(.flexible(minimum: 50, maximum: 190), spacing: 20),
-            GridItem(.flexible(minimum: 50, maximum: 190), spacing: 20)
+            GridItem(.adaptive(minimum: 120, maximum: 190), spacing: 20),
         ]
         
-        ScrollView(.vertical) {
-            LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(viewModel.photos, id: \.id) { photo in
-                    let source = photo.source.medium
-                    cell2(photo)
-                        .frame(minHeight: 100)
-//                    VStack {
-//                        AsyncImage(url: URL(string: source)) { image in
-//                            image
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fill)
-//                        } placeholder: {
-//                            ProgressView()
-//                        }
-//                        .frame(width: 100, height: 100)
-//                        .clipped()
-//                        .border(Color.green, width: 2)
-//                        
-//                        Text(photo.photographer)
-//                            .font(.caption)
-//                    }
+//        GeometryReader { geomety in
+            ScrollView(.vertical) {
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach(viewModel.photos, id: \.id) { photo in
+                        VStack {
+                            Image("pexels-photo3")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+//                                .frame(width: (geometry.size.width - 10 - 8 - 8)/2, height: 150)
+                                .frame(maxHeight: 150)
+                                .clipped()
+                                .opacity(0.5)
+                                .border(Color.green, width: 2)
+                            
+                            Text(photo.photographer)
+                                .font(.caption)
+                        }
+                    }
                 }
             }
+            .padding(8)
+//        }
+    }
+    
+    
+    @ViewBuilder
+    var grid2: some View {
+        let columns = [
+            GridItem(.adaptive(minimum: 120, maximum: 190), spacing: 20),
+//            GridItem(.flexible(minimum: 50, maximum: 190), spacing: 20)
+        ]
+        
+        GeometryReader { geometry in
+            ScrollView(.vertical) {
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach(viewModel.photos, id: \.id) { photo in
+                        let source = photo.source.medium
+//                        cell2(photo)
+                        VStack {
+//                            Image(uiImage: UIImage(data: try! Data(contentsOf: URL(string: source)!))!)
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fill)
+//                            .frame(height: 150)
+//                            .clipped()
+//                            .border(Color.green, width: 2)
+                            
+//                            AsyncImage(url: URL(string: photo.source.medium)) { image in
+//                                image
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fill)
+//                            } placeholder: {
+//                                ProgressView()
+//                            }
+                            
+                            Image("pexels-photo3")
+                                .resizable()
+//                                .scaledToFit()
+                                .aspectRatio(contentMode: .fill)
+//                                .frame(width: (geometry.size.width - 10 - 8 - 8)/2, height: 150)
+                                .frame(height: 150)
+                                .clipped()
+                                .border(Color.green, width: 2)
+                            
+                            Text(photo.photographer)
+                                .font(.caption)
+                        }
+//                            .frame(width: 183, height: 150)
+
+//                            .frame(minHeight: 100)
+//                            .frame(width: (geometry.size.width - 10 - 8 - 8)/2)
+                        //                    VStack {
+                        //                        AsyncImage(url: URL(string: source)) { image in
+                        //                            image
+                        //                                .resizable()
+                        //                                .aspectRatio(contentMode: .fill)
+                        //                        } placeholder: {
+                        //                            ProgressView()
+                        //                        }
+                        //                        .frame(width: 100, height: 100)
+                        //                        .clipped()
+                        //                        .border(Color.green, width: 2)
+                        //
+                        //                        Text(photo.photographer)
+                        //                            .font(.caption)
+                        //                    }
+                    }
+                }
+            }
+            .padding(8)
         }
-        .padding()
         //                    AsyncImage(url: URL(string: source)) { image in
         //                        image
         //                            .resizable()
@@ -98,7 +162,6 @@ struct ContentView: View {
             } placeholder: {
                 ProgressView()
             }
-            .frame(width: 100, height: 100)
             .clipped()
             .border(Color.green, width: 2)
             
