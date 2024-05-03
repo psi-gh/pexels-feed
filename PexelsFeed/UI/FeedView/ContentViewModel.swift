@@ -1,6 +1,6 @@
 // ContentViewModel.swift
 // Copyright (c) 2024 Pavel Ivanov
-// Created by Pavel Ivanov on 02.05.2024.
+// Created by Pavel Ivanov on 03.05.2024.
 
 import Combine
 import Foundation
@@ -14,15 +14,12 @@ struct PhotoUIModel: Equatable {
     }
 }
 
-// @Observable
 @MainActor
 class ContentViewModel: ObservableObject {
     private(set) var asyncBackendController: AsyncBackendController
     private(set) var paginationService: PaginationService<FeedPage>
 
     @Published var photosUIModels: [PhotoUIModel] = []
-
-    var feedPage: [Photo] = []
 
     init(asyncBackendController: AsyncBackendController) {
         self.asyncBackendController = asyncBackendController

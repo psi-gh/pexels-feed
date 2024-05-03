@@ -6,6 +6,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel: ContentViewModel
+    
     var body: some View {
         NavigationStack {
             Group {
@@ -19,7 +20,7 @@ struct ContentView: View {
             }
         }
     }
-
+    
     @ViewBuilder
     var grid: some View {
         let columns = [
@@ -29,31 +30,36 @@ struct ContentView: View {
         ScrollView(.vertical) {
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(viewModel.photosUIModels, id: \.id) { photo in
-                    NavigationLink(destination: DetailView(photo: photo.photo)) {
-                        VStack {
-                            Color.clear.overlay(
-                                CachedAsyncImage(url: URL(string: photo.photo.source.large)!)
-                            )
-                            .frame(height: 150)
-                            .clipped()
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                            Text(photo.photo.photographer)
-                                .font(.caption)
-                                .lineLimit(1)
-                        }
-                        .onAppear {
-                            if photo == viewModel.photosUIModels.last {
-                                viewModel.loadPhotosAsync()
-                            }
-                        }
-                    }
+                    photoCell(photo)
                 }
             }
             .padding()
         }
         .refreshable {
             await viewModel.reloadAsync()
+        }
+    }
+    
+    @ViewBuilder
+    fileprivate func photoCell(_ model: PhotoUIModel) -> NavigationLink<some View, DetailView> {
+        NavigationLink(destination: DetailView(photo: model.photo)) {
+            VStack {
+                Color.clear.overlay(
+                    CachedAsyncImage(url: URL(string: model.photo.source.large)!)
+                )
+                .frame(height: 150)
+                .clipped()
+                .cornerRadius(10)
+                .shadow(radius: 5)
+                Text(model.photo.photographer)
+                    .font(.caption)
+                    .lineLimit(1)
+            }
+            .onAppear {
+                if model == viewModel.photosUIModels.last {
+                    viewModel.loadPhotosAsync()
+                }
+            }
         }
     }
 }

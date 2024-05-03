@@ -5,7 +5,7 @@
 import Foundation
 
 class PaginationService<T: Decodable>: Observable {
-    var getPage: (Int, Int) async throws -> T
+    private(set) var getPage: (Int, Int) async throws -> T
     private var page: Int = 0
     private let pageSize = 10
 

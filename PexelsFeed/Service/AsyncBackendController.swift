@@ -5,8 +5,8 @@
 import Foundation
 
 class AsyncBackendController: ObservableObject {
-    var session = URLSession.shared
-    let baseURL = "https://api.pexels.com"
+    private let session = URLSession.shared
+    private let baseURL = "https://api.pexels.com"
     private let apiKey: String
 
     init(apiKey: String) {

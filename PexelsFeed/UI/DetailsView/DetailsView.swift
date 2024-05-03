@@ -10,6 +10,7 @@ struct DetailView: View {
 
     var body: some View {
         ScrollView {
+            // AsyncImage works well with simple photo load and it uses URLSession's caching
             AsyncImage(url: URL(string: photo.source.original)) { image in
                 image
                     .resizable()
