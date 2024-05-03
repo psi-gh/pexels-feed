@@ -5,6 +5,15 @@
 import Combine
 import Foundation
 
+struct PhotoUIModel: Equatable {
+    let photo: Photo
+    let id: String
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
 // @Observable
 @MainActor
 class ContentViewModel: ObservableObject {
@@ -12,10 +21,12 @@ class ContentViewModel: ObservableObject {
     private(set) var asyncBackendController: AsyncBackendController
 
     private var subscriptions = Set<AnyCancellable>()
-    private var page: Int = 0
+    private var page: Int = 1
     var subscription: AnyCancellable?
 
-    @Published var photos: [Photo] = []
+//    @Published var photos: [Photo] = []
+    @Published var photosUIModels: [PhotoUIModel] = []
+    
     var feedPage: [Photo] = []
 
     var isLoading = false
@@ -30,7 +41,7 @@ class ContentViewModel: ObservableObject {
         Task {
             do {
                 let photos = try await asyncBackendController.getCuratedPhotos(page: 1, perPage: 10)
-                self.photos = photos.photos
+                self.photosUIModels = photos.photos.map { PhotoUIModel(photo: $0, id: UUID().uuidString) }
             } catch {
                 print("Failed to fetch photos: \(error)")
             }
@@ -39,10 +50,10 @@ class ContentViewModel: ObservableObject {
     
     func reloadAsync() async {
         print(#function)
-        self.photos = []
+        self.photosUIModels = []
         do {
             let photos = try await asyncBackendController.getCuratedPhotos(page: 1, perPage: 10)
-            self.photos = photos.photos
+            self.photosUIModels = photos.photos.map { PhotoUIModel(photo: $0, id: UUID().uuidString) }
         } catch {
             print("Failed to fetch photos: \(error)")
         }
@@ -74,10 +85,11 @@ class ContentViewModel: ObservableObject {
                     print("🚘 error: \(error)")
                 }
             } receiveValue: { [weak self] item in
+                let models = item.photos.map { PhotoUIModel(photo: $0, id: UUID().uuidString) }
                 if isReload {
-                    self?.photos = item.photos
+                    self?.photosUIModels = models
                 } else {
-                    self?.photos.append(contentsOf: item.photos)
+                    self?.photosUIModels.append(contentsOf: models)
                 }
                 self?.isLoading = false
             }.store(in: &subscriptions)

@@ -28,6 +28,8 @@
 		A5F3EEEC2BE3ABEA0002D024 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */; };
 		A5F3EEEE2BE47D660002D024 /* AsyncBackendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EEED2BE47D660002D024 /* AsyncBackendController.swift */; };
 		A5F3EF0B2BE4A1610002D024 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EF0A2BE4A1610002D024 /* DetailsView.swift */; };
+		A5F3EF112BE4A9BB0002D024 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EF102BE4A9BB0002D024 /* ImageCache.swift */; };
+		A5F3EF132BE4A9D70002D024 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EF122BE4A9D70002D024 /* CachedAsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		A5F3EEED2BE47D660002D024 /* AsyncBackendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncBackendController.swift; sourceTree = "<group>"; };
 		A5F3EF0A2BE4A1610002D024 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		A5F3EF102BE4A9BB0002D024 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		A5F3EF122BE4A9D70002D024 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				A559E6B12BE2350A0062B2D4 /* UI */,
 				A559E65B2BE2348B0062B2D4 /* PexelsFeedApp.swift */,
 				A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */,
+				A5F3EF102BE4A9BB0002D024 /* ImageCache.swift */,
+				A5F3EF122BE4A9D70002D024 /* CachedAsyncImage.swift */,
 				A5F3EEED2BE47D660002D024 /* AsyncBackendController.swift */,
 				A559E65F2BE2348E0062B2D4 /* Assets.xcassets */,
 				A559E6612BE2348E0062B2D4 /* PexelsFeed.entitlements */,
@@ -272,6 +278,7 @@
 				A559E65C2BE2348B0062B2D4 /* PexelsFeedApp.swift in Sources */,
 				A559E6912BE234EB0062B2D4 /* BackendControllerBuilderProtocol.swift in Sources */,
 				A559E6AD2BE234EB0062B2D4 /* NetworkProtocol.swift in Sources */,
+				A5F3EF112BE4A9BB0002D024 /* ImageCache.swift in Sources */,
 				A559E6BA2BE2418D0062B2D4 /* ContentViewModel.swift in Sources */,
 				A559E69E2BE234EB0062B2D4 /* Error+description.swift in Sources */,
 				A559E6AE2BE234EB0062B2D4 /* NetworkWorker.swift in Sources */,
@@ -280,6 +287,7 @@
 				A559E6B62BE238180062B2D4 /* DefaultCredentialStorage.swift in Sources */,
 				A5F3EF0B2BE4A1610002D024 /* DetailsView.swift in Sources */,
 				A559E6902BE234EB0062B2D4 /* BackendController.swift in Sources */,
+				A5F3EF132BE4A9D70002D024 /* CachedAsyncImage.swift in Sources */,
 				A559E6B52BE238180062B2D4 /* CredentialStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

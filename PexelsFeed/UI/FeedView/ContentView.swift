@@ -13,7 +13,7 @@ struct ContentView: View {
             }
             .navigationTitle("Pexels Feed")
             .onAppear {
-                if viewModel.photos.isEmpty {
+                if viewModel.photosUIModels.isEmpty {
                     viewModel.loadPhotosAsync()
                 }
             }
@@ -28,33 +28,22 @@ struct ContentView: View {
 
         ScrollView(.vertical) {
             LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(viewModel.photos, id: \.id) { photo in
-                    NavigationLink(destination: DetailView(photo: photo)) {
+                ForEach(viewModel.photosUIModels, id: \.id) { photo in
+                    NavigationLink(destination: DetailView(photo: photo.photo)) {
                         VStack {
                             Color.clear.overlay(
-                                AsyncImage(url: URL(string: photo.source.large)) { phase in
-                                    if let image = phase.image {
-                                        image
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                    } else if phase.error != nil {
-                                        Color.red
-                                        let _ = print("‼️" + (phase.error?.getDescription() ?? ""))
-                                    } else {
-                                        ProgressView()
-                                    }
-                                }
+                                CachedAsyncImage(url: URL(string: photo.photo.source.large)!)
                             )
-                            .aspectRatio(9 / 16, contentMode: .fill)
+                            .frame(height: 150)
                             .clipped()
                             .cornerRadius(10)
                             .shadow(radius: 5)
-                            
-                            Text(photo.photographer)
+                            Text(photo.photo.photographer)
                                 .font(.caption)
+                                .lineLimit(1)
                         }
                         .onAppear {
-                            if photo == viewModel.photos.last {
+                            if photo == viewModel.photosUIModels.last {
                                 viewModel.loadPhotos()
                             }
                         }
