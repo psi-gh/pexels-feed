@@ -7,7 +7,7 @@ import Foundation
 
 extension DefaultBackendController: BackendControllerFeed {
     func getFeed(page: Int, perPage: Int) -> AnyPublisher<FeedPage, Error> {
-        let params = ["page": page, "perPage": perPage] as [String: Int]
+        let params = ["page": page, "per_page": perPage] as [String: Int]
         return performRequest(with: .get,
                               to: "/v1/curated",
                               response: FeedPage.self,
