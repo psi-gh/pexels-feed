@@ -27,6 +27,7 @@
 		A559E6BA2BE2418D0062B2D4 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */; };
 		A5F3EEEC2BE3ABEA0002D024 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */; };
 		A5F3EEEE2BE47D660002D024 /* AsyncBackendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EEED2BE47D660002D024 /* AsyncBackendController.swift */; };
+		A5F3EF0B2BE4A1610002D024 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EF0A2BE4A1610002D024 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		A5F3EEED2BE47D660002D024 /* AsyncBackendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncBackendController.swift; sourceTree = "<group>"; };
+		A5F3EF0A2BE4A1610002D024 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,9 @@
 				A559E6892BE234EB0062B2D4 /* Models */,
 				A559E68F2BE234EB0062B2D4 /* API */,
 				A559E6B12BE2350A0062B2D4 /* UI */,
+				A559E65B2BE2348B0062B2D4 /* PexelsFeedApp.swift */,
+				A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */,
+				A5F3EEED2BE47D660002D024 /* AsyncBackendController.swift */,
 				A559E65F2BE2348E0062B2D4 /* Assets.xcassets */,
 				A559E6612BE2348E0062B2D4 /* PexelsFeed.entitlements */,
 				A559E6622BE2348E0062B2D4 /* Preview Content */,
@@ -155,11 +160,8 @@
 		A559E6B12BE2350A0062B2D4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A559E65B2BE2348B0062B2D4 /* PexelsFeedApp.swift */,
-				A559E65D2BE2348B0062B2D4 /* ContentView.swift */,
-				A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */,
-				A5F3EEEB2BE3ABEA0002D024 /* RemoteImage.swift */,
-				A5F3EEED2BE47D660002D024 /* AsyncBackendController.swift */,
+				A5F3EF0C2BE4A1670002D024 /* FeedView */,
+				A5F3EF0D2BE4A1700002D024 /* DetailsView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -171,6 +173,23 @@
 				A559E6B32BE238170062B2D4 /* DefaultCredentialStorage.swift */,
 			);
 			path = CredentialStorage;
+			sourceTree = "<group>";
+		};
+		A5F3EF0C2BE4A1670002D024 /* FeedView */ = {
+			isa = PBXGroup;
+			children = (
+				A559E65D2BE2348B0062B2D4 /* ContentView.swift */,
+				A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */,
+			);
+			path = FeedView;
+			sourceTree = "<group>";
+		};
+		A5F3EF0D2BE4A1700002D024 /* DetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				A5F3EF0A2BE4A1610002D024 /* DetailsView.swift */,
+			);
+			path = DetailsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +278,7 @@
 				A559E69B2BE234EB0062B2D4 /* DefaultBackendController+Feed.swift in Sources */,
 				A559E6932BE234EB0062B2D4 /* DefaultBackendController.swift in Sources */,
 				A559E6B62BE238180062B2D4 /* DefaultCredentialStorage.swift in Sources */,
+				A5F3EF0B2BE4A1610002D024 /* DetailsView.swift in Sources */,
 				A559E6902BE234EB0062B2D4 /* BackendController.swift in Sources */,
 				A559E6B52BE238180062B2D4 /* CredentialStorage.swift in Sources */,
 			);

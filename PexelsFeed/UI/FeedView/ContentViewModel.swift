@@ -39,6 +39,7 @@ class ContentViewModel: ObservableObject {
     
     func reloadAsync() async {
         print(#function)
+        self.photos = []
         do {
             let photos = try await asyncBackendController.getCuratedPhotos(page: 1, perPage: 10)
             self.photos = photos.photos
