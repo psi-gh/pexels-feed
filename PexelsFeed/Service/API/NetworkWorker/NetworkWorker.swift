@@ -49,8 +49,8 @@ class NetworkWorker: NetworkProtocol {
         session = URLSession(configuration: URLSessionConfiguration.default)
         jsonEncoder = JSONEncoder()
         headers = ["Accept": "application/json"]
-        URLCache.shared.memoryCapacity = 100 * 1024 * 1024   // 100MB
-        URLCache.shared.diskCapacity = 100 * 1024 * 1024     // 100MB
+        URLCache.shared.memoryCapacity = 0 // 100MB
+        URLCache.shared.diskCapacity = 0 // 100MB
     }
 
     func performDataTaskWithMapping<T: Decodable>(with method: RequestMethod,

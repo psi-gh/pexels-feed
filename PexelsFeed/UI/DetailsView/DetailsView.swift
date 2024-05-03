@@ -1,9 +1,13 @@
+// DetailsView.swift
+// Copyright (c) 2024 Pavel Ivanov
+// Created by Pavel Ivanov on 03.05.2024.
+
 import SwiftUI
 
 struct DetailView: View {
     let photo: Photo
     @GestureState private var zoom = 1.0
-    
+
     var body: some View {
         ScrollView {
             AsyncImage(url: URL(string: photo.source.original)) { image in
@@ -13,7 +17,7 @@ struct DetailView: View {
                     .scaleEffect(zoom)
                     .gesture(
                         MagnifyGesture()
-                            .updating($zoom) { value, gestureState, transaction in
+                            .updating($zoom) { value, gestureState, _ in
                                 gestureState = value.magnification
                             }
                     )

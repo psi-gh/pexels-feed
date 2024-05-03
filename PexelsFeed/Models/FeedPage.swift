@@ -21,7 +21,7 @@ struct Photo: Codable, Equatable {
     static func == (lhs: Photo, rhs: Photo) -> Bool {
         lhs.id == rhs.id
     }
-    
+
     let id, width, height: Int
     let url: String
     let photographer: String

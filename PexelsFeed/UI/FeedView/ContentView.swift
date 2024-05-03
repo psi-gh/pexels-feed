@@ -1,6 +1,6 @@
 // ContentView.swift
 // Copyright (c) 2024 Pavel Ivanov
-// Created by Pavel Ivanov on 02.05.2024.
+// Created by Pavel Ivanov on 03.05.2024.
 
 import SwiftUI
 
@@ -19,7 +19,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var grid: some View {
         let columns = [

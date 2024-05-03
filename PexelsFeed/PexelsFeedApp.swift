@@ -12,13 +12,12 @@ struct PexelsFeedApp: App {
         credentialStorage: DefaultCredentialStorage(
             token: "M7mUNkqllkBcFtmJoXrkCQWkXB9oHHia9vKvhLXJZTIMXdgK7upH1OMK")
     )
-    
+
     private var asyncBackendController = AsyncBackendController(apiKey: "M7mUNkqllkBcFtmJoXrkCQWkXB9oHHia9vKvhLXJZTIMXdgK7upH1OMK")
 
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: .init(backendController: backendController,
-                                         asyncBackendController: asyncBackendController))
+            ContentView(viewModel: .init(asyncBackendController: asyncBackendController))
         }
         .environmentObject(backendController)
         .environmentObject(asyncBackendController)

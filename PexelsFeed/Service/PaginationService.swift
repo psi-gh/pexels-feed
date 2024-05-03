@@ -1,24 +1,18 @@
-//
-//  PaginationService.swift
-//  PexelsFeed
-//
-//  Created by Pavel Ivanov on 03.05.2024.
-//
+// PaginationService.swift
+// Copyright (c) 2024 Pavel Ivanov
+// Created by Pavel Ivanov on 03.05.2024.
 
 import Foundation
 
 class PaginationService<T: Decodable>: Observable {
-    var getPage: (Int, Int) async throws ->  T
-    private(set) var asyncBackendController: AsyncBackendController
+    var getPage: (Int, Int) async throws -> T
     private var page: Int = 0
     private let pageSize = 10
-    
-    init(asyncBackendController: AsyncBackendController,
-         getPage: @escaping (Int, Int) async throws -> T) where T: Decodable {
-        self.asyncBackendController = asyncBackendController
+
+    init(getPage: @escaping (Int, Int) async throws -> T) where T: Decodable {
         self.getPage = getPage
     }
-    
+
     func getNextPage() async throws -> T? {
         print(#function)
         page += 1
@@ -30,7 +24,7 @@ class PaginationService<T: Decodable>: Observable {
             return nil
         }
     }
-    
+
     func reload() async throws -> T? {
         print(#function)
         page = 1
