@@ -14,7 +14,6 @@ class PaginationService<T: Decodable>: Observable {
     }
 
     func getNextPage() async throws -> T? {
-        print(#function)
         page += 1
         do {
             let photos = try await getPage(page, pageSize)
@@ -26,7 +25,6 @@ class PaginationService<T: Decodable>: Observable {
     }
 
     func reload() async throws -> T? {
-        print(#function)
         page = 1
         do {
             let photos = try await getPage(page, pageSize)
