@@ -44,7 +44,7 @@ struct ContentView: View {
                         }
                         .onAppear {
                             if photo == viewModel.photosUIModels.last {
-                                viewModel.loadPhotos()
+                                viewModel.loadPhotosAsync()
                             }
                         }
                     }
@@ -53,7 +53,7 @@ struct ContentView: View {
             .padding()
         }
         .refreshable {
-            viewModel.reload()
+            await viewModel.reloadAsync()
         }
     }
 }

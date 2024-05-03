@@ -1,26 +1,63 @@
 import Foundation
 
 class AsyncBackendController: ObservableObject {
-    private let apiKey = "M7mUNkqllkBcFtmJoXrkCQWkXB9oHHia9vKvhLXJZTIMXdgK7upH1OMK"
-    private let baseURL = URL(string: "https://api.pexels.com/v1/curated")!
-
-    // Function to fetch curated photos
+    var session = URLSession.shared
+    let baseURL = "https://api.pexels.com"
+    private let apiKey: String
+    
+    init(apiKey: String ) {
+        self.apiKey = apiKey
+    }
+    
     func getCuratedPhotos(page: Int, perPage: Int) async throws -> FeedPage {
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        urlComponents.queryItems = [
-            URLQueryItem(name: "page", value: String(page)),
-            URLQueryItem(name: "per_page", value: String(perPage))
+        let parameters = [
+            "page": String(page),
+            "per_page": String(perPage)
         ]
-
-        var request = URLRequest(url: urlComponents.url!)
-        request.httpMethod = "GET"
+        
+        return try await fetchData(.get, path: "/v1/curated", parameters: parameters, decodeTo: FeedPage.self)
+    }
+    
+    func fetchData<T: Decodable>(_ method: RequestMethod, path: String, parameters: [String: Any]?, decodeTo model: T.Type) async throws -> T {
+        guard var urlComponents = URLComponents(string: baseURL + path) else {
+            throw NetworkError.invalidURL
+        }
+        
+        if let parameters = parameters {
+            urlComponents.queryItems = parameters.map { key, value in
+                URLQueryItem(name: key, value: String(describing: value))
+            }
+        }
+        
+        guard let url = urlComponents.url else {
+            throw NetworkError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = method.rawValue
         request.addValue("\(apiKey)", forHTTPHeaderField: "Authorization")
 
-        let (data, response) = try await URLSession.shared.data(for: request)
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw URLError(.badServerResponse)
+        let (data, response) = try await session.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            throw NetworkError.invalidResponse
         }
-
-        return try JSONDecoder().decode(FeedPage.self, from: data)
+        
+        return try JSONDecoder().decode(T.self, from: data)
+    }
+    
+    enum NetworkError: Error {
+        case invalidURL
+        case invalidResponse
+        case noData
+    }
+    
+    enum RequestMethod: String {
+        case get = "GET"
+        case post = "POST"
+        case put = "PUT"
+        case delete = "DELETE"
+        case patch = "PATCH"
     }
 }

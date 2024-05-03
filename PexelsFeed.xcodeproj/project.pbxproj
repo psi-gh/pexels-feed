@@ -30,6 +30,7 @@
 		A5F3EF0B2BE4A1610002D024 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EF0A2BE4A1610002D024 /* DetailsView.swift */; };
 		A5F3EF112BE4A9BB0002D024 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EF102BE4A9BB0002D024 /* ImageCache.swift */; };
 		A5F3EF132BE4A9D70002D024 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EF122BE4A9D70002D024 /* CachedAsyncImage.swift */; };
+		A5F3EF152BE4CD0C0002D024 /* PaginationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3EF142BE4CD0C0002D024 /* PaginationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		A5F3EF0A2BE4A1610002D024 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		A5F3EF102BE4A9BB0002D024 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		A5F3EF122BE4A9D70002D024 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		A5F3EF142BE4CD0C0002D024 /* PaginationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			children = (
 				A559E65D2BE2348B0062B2D4 /* ContentView.swift */,
 				A559E6B92BE2418D0062B2D4 /* ContentViewModel.swift */,
+				A5F3EF142BE4CD0C0002D024 /* PaginationService.swift */,
 			);
 			path = FeedView;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				A559E6AF2BE234EB0062B2D4 /* NetworkWorker+Error.swift in Sources */,
 				A559E65C2BE2348B0062B2D4 /* PexelsFeedApp.swift in Sources */,
 				A559E6912BE234EB0062B2D4 /* BackendControllerBuilderProtocol.swift in Sources */,
+				A5F3EF152BE4CD0C0002D024 /* PaginationService.swift in Sources */,
 				A559E6AD2BE234EB0062B2D4 /* NetworkProtocol.swift in Sources */,
 				A5F3EF112BE4A9BB0002D024 /* ImageCache.swift in Sources */,
 				A559E6BA2BE2418D0062B2D4 /* ContentViewModel.swift in Sources */,

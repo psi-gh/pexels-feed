@@ -13,7 +13,7 @@ struct PexelsFeedApp: App {
             token: "M7mUNkqllkBcFtmJoXrkCQWkXB9oHHia9vKvhLXJZTIMXdgK7upH1OMK")
     )
     
-    private var asyncBackendController = AsyncBackendController()
+    private var asyncBackendController = AsyncBackendController(apiKey: "M7mUNkqllkBcFtmJoXrkCQWkXB9oHHia9vKvhLXJZTIMXdgK7upH1OMK")
 
     var body: some Scene {
         WindowGroup {
