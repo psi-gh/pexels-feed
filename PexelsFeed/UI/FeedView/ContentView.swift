@@ -6,7 +6,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel: ContentViewModel
-    
+
     var body: some View {
         NavigationStack {
             Group {
@@ -20,7 +20,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var grid: some View {
         let columns = [
@@ -39,7 +39,7 @@ struct ContentView: View {
             await viewModel.reloadAsync()
         }
     }
-    
+
     @ViewBuilder
     fileprivate func photoCell(_ model: PhotoUIModel) -> NavigationLink<some View, DetailView> {
         NavigationLink(destination: DetailView(photo: model.photo)) {
